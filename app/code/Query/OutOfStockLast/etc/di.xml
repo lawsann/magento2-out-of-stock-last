@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider">
+        <plugin name="query_outofstocklast_plugin_catalogsearch_indexer_dataprovider" type="Query\OutOfStockLast\Plugin\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider" />
+    </type>
+    <type name="Magento\Elasticsearch\Model\ResourceModel\Fulltext\Collection\SearchCriteriaResolver">
+        <plugin name="query_outofstocklast_plugin_elasticsearch_searchcriteriaresolver" type="Query\OutOfStockLast\Plugin\Elasticsearch\Model\ResourceModel\Fulltext\Collection\SearchCriteriaResolver" />
+    </type>
+</config>
