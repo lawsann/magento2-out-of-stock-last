@@ -105,14 +105,10 @@ class DataProvider
         ]);
         $stockId = $this->getStockBySalesChannel->execute($salesChannel)->getStockId();
         
-        $this->logger->debug("Stock ID", [$stockId]);
-
         /*
         if($stockId == 1) // default, in other words, dont use MSI
         {
-        	$this->logger->debug("Product IDs | Website ID", [$productsIds, $website->getId()]);
-
-            $stockStatusResModel = $this->stockStatusFactory->create();
+        	$stockStatusResModel = $this->stockStatusFactory->create();
             $stockStatusData = $stockStatusResModel->getProductsStockStatuses($productsIds, $website->getId(), $stockId);
         }
         else
@@ -122,8 +118,6 @@ class DataProvider
         */
 
         $stockStatusData = $this->_getProductsStockStatuses($productsIds, $stockId);
-
-        $this->logger->debug("Stock Data", [$stockStatusData]);
 
         foreach($result as $productId => $productData)
         {
