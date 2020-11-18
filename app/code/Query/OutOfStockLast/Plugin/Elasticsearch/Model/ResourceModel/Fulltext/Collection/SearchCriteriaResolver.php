@@ -23,13 +23,18 @@ class SearchCriteriaResolver
     }
 
     /**
-     * 
+     * Inserts is_in_stock on top of
+     * sort order attributes
+     *
+     * @param ElasticsearchResolver $subject
+     * @param SearchCriteria $result
+     * @return array
      */
     public function afterResolve(
         ElasticsearchResolver $subject, 
         SearchCriteria $result
     ) {
-        $result->setSortOrders(array_merge(["is_saleable" => "DESC"], $result->getSortOrders()));
+        $result->setSortOrders(array_merge(["qoosl_is_in_stock" => "DESC"], $result->getSortOrders()));
 
         return $result;
     }
